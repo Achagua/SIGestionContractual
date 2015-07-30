@@ -1,4 +1,4 @@
-<?php
+time<?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -14,12 +14,13 @@ class CreateFuncionarioTable extends Migration {
 	{
 		Schema::create('funcionario', function(Blueprint $table)
 		{
+			$table->increments('id');
 			$table->bigInteger('n_documento')->unique();
 			$table->string('nombre');
 			$table->string('Apellido');
 			$table->string('ciudad_expedicion_documento');
-			$table->date('fecha_expedicion_documento');
-			$table->date('fecha_nacimiento');
+			$table->datetime('fecha_expedicion_documento');
+			$table->datetime('fecha_nacimiento');
 			$table->char('genero', 1);
 			$table->string('razon_social');
 			$table->string('direccion');

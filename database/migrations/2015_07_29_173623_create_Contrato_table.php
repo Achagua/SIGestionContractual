@@ -15,14 +15,14 @@ class CreateContratoTable extends Migration {
 		Schema::create('contrato', function(Blueprint $table)
 		{
 			$table->bigInteger('n_contrato')->unique();
-			$table->date('fecha_inscripcion_contrato');
-			$table->bigInteger('id_autorizacion_contrato');
-			$table->bigInteger('id_vigencia_contractual');
-			$table->bigInteger('id_coordinacion');
-			$table->bigInteger('n_documento_funcionario');
-			$table->date('fecha_inicio');
-			$table->date('fecha_fin');
-			$table->date('fecha_liquidacion');
+			$table->datetime('fecha_inscripcion_contrato');
+			$table->biginteger('id_autorizacion_contrato')->unsigned();
+			$table->integer('id_vigencia_contractual')->unsigned();
+			$table->integer('id_coordinacion')->unsigned();
+			$table->integer('n_documento_funcionario')->unsigned();
+			$table->datetime('fecha_inicio');
+			$table->datetime('fecha_fin');
+			$table->datetime('fecha_liquidacion');
 			$table->string('area_funcionario');
 			$table->string('cargo_funcionario');
 			$table->string('objeto_contrato');
@@ -49,7 +49,7 @@ class CreateContratoTable extends Migration {
 				  ->onDelete('cascade');
 
 			$table->foreign('n_documento_funcionario')
-				  ->references('n_documento')
+				  ->references('id')
 				  ->on('funcionario')
 				  ->onDelete('cascade');
 

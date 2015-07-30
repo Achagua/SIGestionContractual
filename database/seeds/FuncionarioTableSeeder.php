@@ -6,7 +6,7 @@ class FuncionarioTableSeeder extends Seeder
 {	
 	public function run()
 	{
-		\DB::table('users')->insertGetId(array (
+		\DB::table('Funcionario')->insertGetId(array (
 
 			'n_documento' => '97091407047',
 			'nombre' => 'Alexis',
