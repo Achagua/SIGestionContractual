@@ -24,7 +24,7 @@ class CreateAuditoriaTable extends Migration {
 
 			$table->foreign('n_documento_usuario')
 				  ->references('id')
-				  ->on('users')
+				  ->on('usuario')
 				  ->onDelete('cascade');
 
 			$table->timestamps();
