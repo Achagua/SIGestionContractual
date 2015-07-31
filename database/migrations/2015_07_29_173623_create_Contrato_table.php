@@ -14,6 +14,7 @@ class CreateContratoTable extends Migration {
 	{
 		Schema::create('contrato', function(Blueprint $table)
 		{
+			$table->increments('id');
 			$table->bigInteger('n_contrato')->unique();
 			$table->datetime('fecha_inscripcion_contrato');
 			$table->biginteger('id_autorizacion_contrato')->unsigned();
