@@ -19,3 +19,9 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::resource('movie', 'MovieController');
+
+Route::get('movie/destroy/{id}', ['as' => 'movie/destroy', 'uses' => 'MovieController@destroy']);
+
+Route::post('movie/search/{id}', ['as' => 'movie/search', 'uses' => 'MovieController@search']);
