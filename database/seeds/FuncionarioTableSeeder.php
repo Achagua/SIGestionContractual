@@ -1,5 +1,5 @@
 <?php 
-
+/*
 use Illuminate\Database\Seeder;
 
 class FuncionarioTableSeeder extends Seeder
